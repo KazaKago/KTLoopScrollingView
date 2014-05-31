@@ -107,6 +107,8 @@
         during = (self.frame.size.width + targetFrame.size.width) / self.speed;
     }else if(self.direction == KTAnimationDirectionFromTopToBottom || self.direction == KTAnimationDirectionFromBottomToTop){
         during = (self.frame.size.height + targetFrame.size.height) / self.speed;
+    }else{
+        during = 5;
     }
 
     //commit animation
@@ -133,9 +135,11 @@
     int nextIndex = (index + 1) % self.viewArray.count;
     float nextTime;
     if(self.direction == KTAnimationDirectionFromLeftToRight || self.direction == KTAnimationDirectionFromRightToLeft){
-       nextTime = (targetFrame.size.width + self.space) / self.speed;
+        nextTime = (targetFrame.size.width + self.space) / self.speed;
     }else if(self.direction == KTAnimationDirectionFromTopToBottom || self.direction == KTAnimationDirectionFromBottomToTop){
         nextTime = (targetFrame.size.height + self.space) / self.speed;
+    }else{
+        nextTime = 5;
     }
     NSDictionary *userInfo = @{@"IndexKey" : @(nextIndex)};
     self.nextAnimTimer = [NSTimer scheduledTimerWithTimeInterval:nextTime
