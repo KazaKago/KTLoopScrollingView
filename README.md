@@ -30,26 +30,28 @@ Podfile内に以下の一文を追記してpod installを行って下さい。
 使用するクラスで上記をインポートした後、
 以下のように記載して下さい。
 
-    //KTLoopScrollingViewの生成
-    KTLoopScrollingView slidingView = [[KTLoopScrollingView alloc] initWithFrame:CGRectMake(0, 0, 320, 200)];
-    slidingView.direction = KTAnimationDirectionFromLeftToRight; //左から右へ流す(デフォルト=KTAnimationDirectionFromLeftToRight)
-    slidingView.speed = 100.0; //スピードの調整(デフォルト=60.0f)
-    slidingView.delay = 0.0; //遅延実行(デフォルト=0.0f)
-    slidingView.space = 30.0; //流すView同士の間隔調整(デフォルト=20.0f)
-    slidingView.option = UIViewAnimationOptionCurveLinear; //UIViewAnimationOption(デフォルト=UIViewAnimationOptionCurveLinear)
-    [self.view addSubview:slidingView];
+```objc
+//KTLoopScrollingViewの生成
+KTLoopScrollingView slidingView = [[KTLoopScrollingView alloc] initWithFrame:CGRectMake(0, 0, 320, 200)];
+slidingView.direction = KTAnimationDirectionFromLeftToRight; //左から右へ流す(デフォルト=KTAnimationDirectionFromLeftToRight)
+slidingView.speed = 100.0; //スピードの調整(デフォルト=60.0f)
+slidingView.delay = 0.0; //遅延実行(デフォルト=0.0f)
+slidingView.space = 30.0; //流すView同士の間隔調整(デフォルト=20.0f)
+slidingView.option = UIViewAnimationOptionCurveLinear; //UIViewAnimationOption(デフォルト=UIViewAnimationOptionCurveLinear)
+[self.view addSubview:slidingView];
 
-    //流すViewの作成
-    UILabel *slidingLabel = [[UILabel alloc] init];
-    slidingLabel.font = [UIFont systemFontOfSize:30];
-    slidingLabel.textColor = [UIColor blackColor];
-    slidingLabel.alpha = 0.5;
-    slidingLabel.text = @"This label is scrolling!";
-    [slidingLabel sizeToFit];
-    [slidingView.viewArray addObject:slidingLabel]; //KTLoopScrollingViewに登録
+//流すViewの作成
+UILabel *slidingLabel = [[UILabel alloc] init];
+slidingLabel.font = [UIFont systemFontOfSize:30];
+slidingLabel.textColor = [UIColor blackColor];
+slidingLabel.alpha = 0.5;
+slidingLabel.text = @"This label is scrolling!";
+[slidingLabel sizeToFit];
+[slidingView.viewArray addObject:slidingLabel]; //KTLoopScrollingViewに登録
 
-    //アニメーションを開始
-    [slidingView startAnimation];
+//アニメーションを開始
+[slidingView startAnimation];
+```
 
 実行すると以下のようになります。
 
@@ -59,19 +61,25 @@ ViewArrayへ追加するものはUIViewであれば何でも良いので適宜�
 
 アニメーションを停止させるには以下のようにします。
 
-    [slidingView stopAnimation];
+```objc
+[slidingView stopAnimation];
+```
 
 アニメーションが動作中か否かを確認する際は以下のようにします。
 
-    BOOL isAnimationActive = [slidingView isAnimationActive];
+```objc
+BOOL isAnimationActive = [slidingView isAnimationActive];
+```
 
 ##Tips##
 
 KTLoopScrollingViewをを使用する際にCGAffineTransformMakeRotationを用いてViewを傾けると  
 流れる座標がずれてしまうのでshiftInitPosition,shiftEndPositionメソッドで座標を調整して下さい。
 
-    slidingView.shiftInitPosition = CGPointMake(0, -90);
-    slidingView.shiftEndPosition = CGPointMake(0, 90);
+```objc
+slidingView.shiftInitPosition = CGPointMake(0, -90);
+slidingView.shiftEndPosition = CGPointMake(0, 90);
+```
 
 上記の処理を追加すると、  
 shiftInitPositionで流れ始める座標がy座標に-90だけずれた位置になり、  
