@@ -1,18 +1,17 @@
 KTLoopScrollingView
 ===================
 
-iOS上で電光掲示板風に文章が横に流れるViewを実現するライブラリです。  
+iOS上で電光掲示板風に文章が横に流れるViewを簡単に実現するライブラリです。  
 登録した文章を順番にViewの中で流し、  
 最後まで流しきった後は再び先頭のViewを流します。  
 
 基本的にUIViewを継承したViewであれば何でも流すことが可能です。  
-流す向きは上下左右に設定することができ、  
-Viewが動く速度の変更や間隔の調整、  
+流す向きは上下左右に設定することができ、Viewが動く速度の変更や間隔の調整、  
 アニメーションの遅延実行などをサポートしています。
 
-![alt text][4]
+![alt text](http://placehold.it/320x568)
 
-##インストール方法##
+##インストール##
 
 ###CocoaPods###
 
@@ -37,6 +36,7 @@ Podfile内に以下の一文を追記してpod installを行って下さい。
     slidingView.speed = 100.0; //スピードの調整
     slidingView.delay = 0.0; //遅延実行
     slidingView.space = 30.0; //流すView同士の間隔調整
+    [self.view addSubview:slidingView];
 
     //流すViewの作成
     UILabel *slidingLabel = [[UILabel alloc] init];
@@ -52,13 +52,22 @@ Podfile内に以下の一文を追記してpod installを行って下さい。
 
 実行すると以下のようになります。
 
-![alt text][4]
+![alt text](http://placehold.it/320x200)
 
-ViewArrayへ追加するものはUIViewであれば何でも良いので適宜書き換えて使用して下さい。
+ViewArrayへ追加するものはUIViewであれば何でも良いので適宜書き換えて使用して下さい。  
+
+アニメーションを停止させるには以下のようにします。
+
+    [slidingView stopAnimation];
+
+アニメーションが動作中か否かを確認する際は以下のようにします。
+
+    [slidingView isAnimation];
 
 ##Tips##
 
-KTLoopScrollingViewをを使用する際にCGAffineTransformMakeRotationを用いてViewを傾けると流れる座標がずれることがあるのでshiftInitPositionメソッドで座標を調整して下さい。
+KTLoopScrollingViewをを使用する際にCGAffineTransformMakeRotationを用いてViewを傾けると  
+流れる座標がずれることがあるのでshiftInitPositionメソッドで座標を調整して下さい。
 
     slidingView.shiftInitPosition = CGPointMake(0, -90);
 
@@ -66,25 +75,7 @@ KTLoopScrollingViewをを使用する際にCGAffineTransformMakeRotationを用�
 またこのメソッドはKTAnimationDirectionが水平方向の際はxは座標は無視され、
 KTAnimationDirectionが垂直方向の際はy座標は無視されます。
 
-When you press the *copy markdown* button you'll get the markdown markup wrapped in `markdown` and `p` tags, so you can send it as an email to post@posterous.com to create a new entry for your own blog.
+##ライセンス##
 
-> *if your browser supports HTML 5, this text will be stored locally*
-
-###Adding images###
-![alt text][4]
-
-###Writting code ###
-
-    #!javascript
-    function hi(){
-        alert('hi!');
-    }
-
-To learn more about markdown click [here][5]
-
-[1]: http://posterous.com/help/markdown
-[2]: https://github.com/derobins/wmd
-[3]: http://posterous.com
-[4]: http://placehold.it/350x150
-[5]: http://daringfireball.net/projects/markdown/
-</markdown></p>
+本ライブラリはMIT Licenseで配布しております。  
+詳しくは付属のLICENSEファイルを御覧ください。
