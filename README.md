@@ -31,11 +31,12 @@ Podfile内に以下の一文を追記してpod installを行って下さい。
 以下のように記載して下さい。
 
     //KTLoopScrollingViewの生成
-    KTLoopScrollingView slidingView = [[KTLoopScrollingView alloc] init];
-    slidingView.direction = KTAnimationDirectionFromLeftToRight; //流す方向
-    slidingView.speed = 100.0; //スピードの調整
-    slidingView.delay = 0.0; //遅延実行
-    slidingView.space = 30.0; //流すView同士の間隔調整
+    KTLoopScrollingView slidingView = [[KTLoopScrollingView alloc] initWithFrame:CGRectMake(0, 0, 320, 200)];
+    slidingView.direction = KTAnimationDirectionFromLeftToRight; //左から右へ流す(デフォルト=KTAnimationDirectionFromLeftToRight)
+    slidingView.speed = 100.0; //スピードの調整(デフォルト=60.0f)
+    slidingView.delay = 0.0; //遅延実行(デフォルト=0.0f)
+    slidingView.space = 30.0; //流すView同士の間隔調整(デフォルト=20.0f)
+    slidingView.option = UIViewAnimationOptionCurveLinear; //UIViewAnimationOption(デフォルト=UIViewAnimationOptionCurveLinear)
     [self.view addSubview:slidingView];
 
     //流すViewの作成
@@ -62,18 +63,21 @@ ViewArrayへ追加するものはUIViewであれば何でも良いので適宜�
 
 アニメーションが動作中か否かを確認する際は以下のようにします。
 
-    [slidingView isAnimation];
+    BOOL isAnimationActive = [slidingView isAnimationActive];
 
 ##Tips##
 
 KTLoopScrollingViewをを使用する際にCGAffineTransformMakeRotationを用いてViewを傾けると  
-流れる座標がずれることがあるのでshiftInitPositionメソッドで座標を調整して下さい。
+流れる座標がずれてしまうのでshiftInitPosition,shiftEndPositionメソッドで座標を調整して下さい。
 
     slidingView.shiftInitPosition = CGPointMake(0, -90);
+    slidingView.shiftEndPosition = CGPointMake(0, 90);
 
-上記は元々流れる座標からy座標に-90だけずれた位置にViewが流れます。
-またこのメソッドはKTAnimationDirectionが水平方向の際はxは座標は無視され、
-KTAnimationDirectionが垂直方向の際はy座標は無視されます。
+上記の処理を追加すると、  
+shiftInitPositionで流れ始める座標がy座標に-90だけずれた位置になり、  
+shiftEndPositionで流れ終える座標がy座標に90だけずれた位置になります。  
+またこのメソッドはKTAnimationDirectionが  
+水平方向の際はxは座標は無視され、垂直方向の際はy座標は無視されます。
 
 ##ライセンス##
 
