@@ -9,7 +9,7 @@ iOS上で電光掲示板風に文章が横に流れるViewを簡単に実現す�
 流す向きは上下左右に設定することができ、Viewが動く速度の変更や間隔の調整、  
 アニメーションの遅延実行などをサポートしています。
 
-![alt text](Screenshot01.gif)
+![スクリーンショット](Screenshot01.gif)
 
 ##インストール##
 
@@ -17,7 +17,9 @@ iOS上で電光掲示板風に文章が横に流れるViewを簡単に実現す�
 
 Podfile内に以下の一文を追記してpod installを行って下さい。
 
-    pod 'KTLoopScrollingView', :git => 'https://github.com/weathercock/KTLoopScrollingView.git'
+```
+pod 'KTLoopScrollingView', :git => 'https://github.com/weathercock/KTLoopScrollingView.git'
+```
 
 ###マニュアル###
 
@@ -25,7 +27,9 @@ Podfile内に以下の一文を追記してpod installを行って下さい。
 
 ##使い方##
 
-    #import "KTLoopScrollingView.h"
+```objc
+#import "KTLoopScrollingView.h"
+```
 
 使用するクラスで上記をインポートした後、
 以下のように記載して下さい。
@@ -66,22 +70,17 @@ ViewArrayへ追加するものはUIViewであれば何でも良いので適宜�
 ```objc
 BOOL isAnimationActive = [slidingView isAnimationActive];
 ```
-
 ##Tips##
 
-KTLoopScrollingViewをを使用する際にCGAffineTransformMakeRotationを用いてViewを傾けると  
-流れる座標がずれてしまうのでshiftInitPosition,shiftEndPositionメソッドで座標を調整して下さい。
+KTLoopScrollingViewをを使用する際にCGAffineTransformMakeRotationを用いてViewを回転させると  
+流れる座標がずれることがあるのでその場合にはshiftInitPositionメソッドを用いて座標を調整して下さい。
 
 ```objc
 slidingView.shiftInitPosition = CGPointMake(0, -90);
-slidingView.shiftEndPosition = CGPointMake(0, 90);
 ```
 
-上記の処理を追加すると、  
-shiftInitPositionで流れ始める座標がy座標に-90だけずれた位置になり、  
-shiftEndPositionで流れ終える座標がy座標に90だけずれた位置になります。  
-またこのメソッドはKTAnimationDirectionが  
-水平方向の際はxは座標は無視され、垂直方向の際はy座標は無視されます。
+上記の処理を追加すると流れ始める座標がy座標に-90だけずれた位置になります。  
+このメソッドはKTAnimationDirectionが水平方向の際はxは座標は無視され、垂直方向の際はy座標は無視されます。
 
 ##ライセンス##
 
