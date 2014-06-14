@@ -22,6 +22,7 @@
 		E301E0C31934DE58000FC8FB /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = E301E0C11934DE58000FC8FB /* InfoPlist.strings */; };
 		E301E0C51934DE58000FC8FB /* KTLoopScrollingViewSampleTests.m in Sources */ = {isa = PBXBuildFile; fileRef = E301E0C41934DE58000FC8FB /* KTLoopScrollingViewSampleTests.m */; };
 		E301E0D11934DE62000FC8FB /* KTLoopScrollingView.m in Sources */ = {isa = PBXBuildFile; fileRef = E301E0D01934DE62000FC8FB /* KTLoopScrollingView.m */; };
+		E3193EAE194B3C0A00B6717F /* DemoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E3193EAD194B3C0A00B6717F /* DemoViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -56,6 +57,8 @@
 		E301E0C41934DE58000FC8FB /* KTLoopScrollingViewSampleTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = KTLoopScrollingViewSampleTests.m; sourceTree = "<group>"; };
 		E301E0CF1934DE62000FC8FB /* KTLoopScrollingView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KTLoopScrollingView.h; sourceTree = "<group>"; };
 		E301E0D01934DE62000FC8FB /* KTLoopScrollingView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KTLoopScrollingView.m; sourceTree = "<group>"; };
+		E3193EAC194B3C0A00B6717F /* DemoViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DemoViewController.h; sourceTree = "<group>"; };
+		E3193EAD194B3C0A00B6717F /* DemoViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DemoViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -120,6 +123,8 @@
 				E301E0AB1934DE58000FC8FB /* Main.storyboard */,
 				E301E0AE1934DE58000FC8FB /* ViewController.h */,
 				E301E0AF1934DE58000FC8FB /* ViewController.m */,
+				E3193EAC194B3C0A00B6717F /* DemoViewController.h */,
+				E3193EAD194B3C0A00B6717F /* DemoViewController.m */,
 				E301E0CE1934DE62000FC8FB /* KTLoopScrollingView */,
 				E301E0B11934DE58000FC8FB /* Images.xcassets */,
 				E301E0A01934DE58000FC8FB /* Supporting Files */,
@@ -266,6 +271,7 @@
 				E301E0B01934DE58000FC8FB /* ViewController.m in Sources */,
 				E301E0D11934DE62000FC8FB /* KTLoopScrollingView.m in Sources */,
 				E301E0AA1934DE58000FC8FB /* AppDelegate.m in Sources */,
+				E3193EAE194B3C0A00B6717F /* DemoViewController.m in Sources */,
 				E301E0A61934DE58000FC8FB /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -471,6 +477,7 @@
 				E301E0CA1934DE58000FC8FB /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		E301E0CB1934DE58000FC8FB /* Build configuration list for PBXNativeTarget "KTLoopScrollingViewSampleTests" */ = {
 			isa = XCConfigurationList;
@@ -479,6 +486,7 @@
 				E301E0CD1934DE58000FC8FB /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

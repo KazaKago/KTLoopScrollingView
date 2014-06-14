@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="5056" systemVersion="13D65" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="vXZ-lx-hvc">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="5056" systemVersion="13D65" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="QKe-fM-efR">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="3733"/>
     </dependencies>
@@ -72,13 +72,29 @@
                                     <constraint firstAttribute="height" constant="50" id="TFV-Gc-R0w"/>
                                 </constraints>
                             </view>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="f0g-oY-740">
+                                <rect key="frame" x="254" y="73" width="46" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="46" id="BFZ-MW-ZIE"/>
+                                    <constraint firstAttribute="height" constant="30" id="VOy-Vi-Rgm"/>
+                                </constraints>
+                                <state key="normal" title="デモ">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <segue destination="gS5-Ij-QNB" kind="push" id="2Ds-am-Z8h"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
+                            <constraint firstAttribute="trailing" secondItem="f0g-oY-740" secondAttribute="trailing" constant="20" id="0Tc-ib-tuU"/>
                             <constraint firstItem="ZH2-z8-eX2" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leading" constant="20" id="4Cg-CF-Gc4"/>
                             <constraint firstItem="nmG-u4-5ZO" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leading" constant="20" id="6sB-tz-qv6"/>
                             <constraint firstItem="rpT-L6-Qld" firstAttribute="top" secondItem="FKg-zX-P33" secondAttribute="bottom" constant="8" id="EZR-Wt-0Oe"/>
                             <constraint firstItem="rpT-L6-Qld" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leading" constant="20" id="PQm-W3-EY2"/>
+                            <constraint firstItem="f0g-oY-740" firstAttribute="top" secondItem="jyV-Pf-zRb" secondAttribute="bottom" constant="9" id="PgU-JE-G0a"/>
                             <constraint firstItem="FKg-zX-P33" firstAttribute="top" secondItem="jyV-Pf-zRb" secondAttribute="bottom" constant="9" id="TZX-zH-w2w"/>
                             <constraint firstItem="ZH2-z8-eX2" firstAttribute="top" secondItem="nmG-u4-5ZO" secondAttribute="bottom" constant="45" id="V7q-Ha-pQY"/>
                             <constraint firstItem="FKg-zX-P33" firstAttribute="leading" secondItem="em5-Oh-YrF" secondAttribute="trailing" constant="14" id="b8n-2b-d2c"/>
@@ -89,6 +105,7 @@
                             <constraint firstItem="49a-qZ-ndO" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leading" constant="20" id="yUp-lh-LgZ"/>
                         </constraints>
                     </view>
+                    <navigationItem key="navigationItem" id="J4G-fC-cqR"/>
                     <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
                     <connections>
                         <outlet property="loopScrollingView01" destination="rpT-L6-Qld" id="DyU-kH-NdB"/>
@@ -99,6 +116,99 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="x5A-6p-PRh" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="627" y="81"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="F0J-Y9-1Jx">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="QKe-fM-efR" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="rjZ-CN-g4I">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="vXZ-lx-hvc" kind="relationship" relationship="rootViewController" id="2X0-fP-PT7"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="MLp-Rg-yIy" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="179" y="81"/>
+        </scene>
+        <!--Demo View Controller-->
+        <scene sceneID="yLA-k3-TLq">
+            <objects>
+                <viewController id="gS5-Ij-QNB" customClass="DemoViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="CG9-I9-Z7H"/>
+                        <viewControllerLayoutGuide type="bottom" id="WDY-AS-90c"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="Dlf-dd-vmF">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Fpc-I4-Ktz" customClass="KTLoopScrollingView">
+                                <rect key="frame" x="-20" y="149" width="360" height="142"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="142" id="3Zb-Rj-sXb"/>
+                                    <constraint firstAttribute="width" constant="360" id="JFl-bM-1T9"/>
+                                </constraints>
+                            </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="YSt-T8-Qo9" customClass="KTLoopScrollingView">
+                                <rect key="frame" x="91" y="-48" width="360" height="142"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="142" id="0qa-op-ctA"/>
+                                    <constraint firstAttribute="width" constant="360" id="EDR-cO-9qR"/>
+                                </constraints>
+                            </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="OcB-Li-tHM" customClass="KTLoopScrollingView">
+                                <rect key="frame" x="-84" y="149" width="520" height="142"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="142" id="S6c-tH-N1q"/>
+                                    <constraint firstAttribute="width" constant="520" id="qhp-Be-KQG"/>
+                                </constraints>
+                            </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="q33-Dh-5qp" customClass="KTLoopScrollingView">
+                                <rect key="frame" x="-50" y="369" width="390" height="142"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="0.36470588240000001" green="0.69411764710000001" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="390" id="gi6-lq-um8"/>
+                                    <constraint firstAttribute="height" constant="142" id="m5l-1n-3Aj"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="YSt-T8-Qo9" secondAttribute="trailing" constant="-131" id="2Sr-cM-kdz"/>
+                            <constraint firstItem="Fpc-I4-Ktz" firstAttribute="leading" secondItem="Dlf-dd-vmF" secondAttribute="leading" constant="-20" id="4HW-Nb-gTf"/>
+                            <constraint firstItem="OcB-Li-tHM" firstAttribute="leading" secondItem="Dlf-dd-vmF" secondAttribute="leading" constant="-84" id="RdR-wP-vCV"/>
+                            <constraint firstItem="q33-Dh-5qp" firstAttribute="leading" secondItem="Dlf-dd-vmF" secondAttribute="leading" constant="-50" id="czR-ub-XJo"/>
+                            <constraint firstItem="OcB-Li-tHM" firstAttribute="top" secondItem="Dlf-dd-vmF" secondAttribute="top" constant="149" id="fha-HA-YGn"/>
+                            <constraint firstAttribute="bottom" secondItem="Fpc-I4-Ktz" secondAttribute="bottom" constant="277" id="jey-wx-WVe"/>
+                            <constraint firstAttribute="bottom" secondItem="q33-Dh-5qp" secondAttribute="bottom" constant="57" id="nBm-nx-NmR"/>
+                            <constraint firstItem="YSt-T8-Qo9" firstAttribute="top" secondItem="Dlf-dd-vmF" secondAttribute="top" constant="-48" id="wmH-75-5tf"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="aVI-0C-Pbp"/>
+                    <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
+                    <connections>
+                        <outlet property="slidingView01" destination="q33-Dh-5qp" id="LcC-h7-EIo"/>
+                        <outlet property="slidingView02" destination="Fpc-I4-Ktz" id="939-VJ-Sda"/>
+                        <outlet property="slidingView03" destination="YSt-T8-Qo9" id="3Jg-q9-yPt"/>
+                        <outlet property="slidingView04" destination="OcB-Li-tHM" id="3nI-Jg-DX6"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="cfz-fl-pRZ" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1089" y="81"/>
         </scene>
     </scenes>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
