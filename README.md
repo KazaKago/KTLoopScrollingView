@@ -9,7 +9,7 @@ iOS上で電光掲示板風に文章が横に流れるViewを簡単に実現す�
 流す向きは上下左右に設定することができ、Viewが動く速度の変更や間隔の調整、  
 アニメーションの遅延実行などをサポートしています。
 
-![alt text](http://placehold.it/320x568)
+![alt text](Screenshot01.gif)
 
 ##インストール##
 
@@ -52,10 +52,6 @@ slidingLabel.text = @"This label is scrolling!";
 //アニメーションを開始
 [slidingView startAnimation];
 ```
-
-実行すると以下のようになります。
-
-![alt text](http://placehold.it/320x200)
 
 ViewArrayへ追加するものはUIViewであれば何でも良いので適宜書き換えて使用して下さい。  
 
